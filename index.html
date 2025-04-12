@@ -8,6 +8,7 @@
     <h1>Team Meeting: check in</h1>
     <p>Date: April 12, 2025</p>
   </header>
+    
   <main>
     <section>
       <h2>Attendance</h2>
@@ -37,6 +38,65 @@
     <span> span inside a div.</span>
   </div>
 </section>
+    <section>
+  <h2>Meeting whitebaord</h2>
+  <img src="images/whiteboard_diagram.jpg" alt="A diagram drawn during the meeting">
+  
+  <audio controls>
+    <source src="audio/meeting_audio.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <video controls width="320" height="240">
+    <source src="video/meeting_video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</section>
+    <details>
+  <summary>Click to see old meeting notes</summary>
+  <p>All the notes from the previous meeting go here...</p>
+</details>
+
+<form action="#" method="GET">
+  <fieldset>
+    <legend>Post meeting form</legend>
+
+    <label for="username">Name:</label>
+    <input id="username" type="text" name="username" placeholder="Enter your name"><br><br>
+
+    <label for="meeting-date">Meeting Date:</label>
+    <input id="meeting-date" type="date" name="meeting-date"><br><br>
+
+    <label for="favorite-game">Favorite game:</label>
+    <input id="favorite-game" type="text" list="topics">
+    <datalist id="topics">
+      <option value="scribble"></option>
+      <option value="among us"></option>
+      <option value="gartic phone"></option>
+    </datalist>
+    <br><br>
+
+    <label for="subscribe">Subscribe</label>
+    <input id="subscribe" type="checkbox" name="subscribe"><br><br>
+
+    <p>roles:</p>
+    <input id="role-dev" type="radio" name="role" value="dev">
+    <label for="role-dev">Dev</label><br>
+    <input id="role-designer" type="radio" name="role" value="designer">
+    <label for="role-designer">Design</label><br><br>
+
+    <label for="comments">extra comments:</label><br>
+    <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+
+    <select name="improvement">
+      <option value="1">More coffee</option>
+      <option value="2">Shorter</option>
+      <option value="3">funner</option>
+    </select><br><br>
+
+    <button type="submit">submit</button>
+  </fieldset>
+</form>
     
   </main>
     
