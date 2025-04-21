@@ -2,11 +2,7 @@
 
 
 header {
-  background-color: var(--accent, green);  
-  color:#008000;
-  padding: 1.5rem;                                 
-  text-align: center;
-  border-bottom: 10px solid rgba(0,0,0,1);        
+  background-color: green;       
 }
 
 .agenda-list {
