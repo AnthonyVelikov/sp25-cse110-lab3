@@ -68,15 +68,29 @@ main:has(form:hover) section {
 
 .row {
   display: flex;
-  gap: 2rem;              /* space between sections */
-  margin-bottom: 2rem;    /* vertical spacing between rows */
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
-/* Let each section share the width equally */
-.row > section {
-  flex: 1;                /* each child takes equal space */
+/* force the form‑row to be full‑width and stack its contents */
+.form-row {
+  flex: none;         /* ignore equal‐flex behavior */
+  width: 100%;        /* span entire container */
+  justify-content: center;  /* optional: center the form */
 }
 
+/* constrain the form’s max width */
+.form-row form {
+  width: 100%;
+  max-width: 600px;   /* adjust as you like */
+}
+
+/* on narrow screens, stack everything vertically */
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+}
 /* Optional: constrain images/media inside their column */
 .whiteboard {
   width: 100%;
