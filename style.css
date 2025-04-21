@@ -3,7 +3,7 @@
   --accent: hsl(150 60% 60%);              /* hsl */
   --accent-fallback: #00FF00;              /* hex */  
   --bg-light: rgba(240, 0, 250, 1);     /* rgba */ 
-  --font-main: "Papyrus", sans-serif;   /* universal font */
+  --font-main: "Roboto", sans-serif;   /* universal font */
 }
 
 
@@ -51,7 +51,7 @@ body {
 
 
 .first-row {
-  display: flex;            /* ensure it’s a flex container */
+  display: flex;            /* flex container */
   flex-direction: row;      
   gap: 4rem;                /* space between sections */
   margin-bottom: 3rem;      /* extra room */
@@ -67,17 +67,17 @@ body {
   list-style: none;
   border: 2px dashed var(--accent);
   padding: 1rem;                          /* shorthand */
-  margin-bottom: 2rem;
+  margin-bottom: 2rem;                    /* longhand  margin*/
 }
 .attendee-list .attendee {                /* descendant combinator */
   padding: 0.5rem;                        /* shorthand */
-  border-bottom: 1px solid #999;          /* longhand border properties */
+  border-bottom: 1px solid #999;          /* longhand padding */
 }
 .attendee-list .attendee:last-child {
   border-bottom: none;
 }
 
-/* child combinator */
+
 .agenda-list > li {
   background: hsl(300 30% 85%);           /* HSL */
   margin: 0.5rem 0;                       /* shorthand */
@@ -91,9 +91,7 @@ body {
 .agenda-list > li:hover   { outline: 2px dashed #222; }
 .agenda-list > li:active  { transform: scale(0.98); }
 
-/* ——————————————————————————
-   7) MEDIA CONTAINER (Flexbox)
-———————————————————————————————— */
+
 .media-container {
   display: flex;                          /* flexbox */
   justify-content: space-around;          /* flex attribute */
@@ -107,30 +105,27 @@ body {
   text-align: center;
 }
 
-/* ensure audio/video/img display properly */
+
 .media-item audio,
 .media-item video,
 .media-item img {
   display: block;                         /* display */
   width: 100%;                            /* width */
   max-width: 400px;                       /* max-width */
-  height: auto;                           /* height:auto */
+  height: auto;                           /* auto */
   margin: 0.5rem auto;
 }
 
-/* ——————————————————————————
-   8) FORM GRID LAYOUT (Grid)
-———————————————————————————————— */
+
 #post-meeting-form form {
   display: grid;                          /* grid */
   grid-template-columns: repeat( auto-fill, minmax(200px, 1fr) ); /* grid attribute */
   grid-gap: 1rem;                         /* grid attribute */
 }
 
-/* ——————————————————————————
-   9) TEXT STYLING & DISPLAY
-———————————————————————————————— */
+
 h1, h2, h3 {
+  color: green;                           /* text-color */
   text-decoration: underline;             /* text-decoration */
   text-align: center;                     /* text-align */
 }
@@ -139,9 +134,7 @@ h1, h2, h3 {
 .hidden { display: none; }                /* none */
 .inline-block { display: inline-block; } /* inline-block */
 
-/* ——————————————————————————
- 10) POSITION EXAMPLES
-———————————————————————————————— */
+
 footer {
   position: sticky;                       /* position */
   bottom: 0;                              /* position */
@@ -150,24 +143,19 @@ footer {
   padding: 1rem;
 }
 
-/* ——————————————————————————
- 11) NEW SELECTORS & NESTING
-———————————————————————————————— */
-/* :has() selector (new) */
+
 .container:has(.form-group.required) {
   border: 3px dashed red;
 }
 
-/* nested selector (@nest) — newest CSS nesting syntax */
+
 section {
   @nest & > h2 {
     color: hsla(200, 50%, 30%, 0.8);
   }
 }
 
-/* ——————————————————————————
- 12) MEDIA QUERY (Responsiveness)
-———————————————————————————————— */
+
 @media (max-width: 768px) {
   .media-container {
     flex-direction: column;               /* override for narrow screens */
