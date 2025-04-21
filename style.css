@@ -1,53 +1,38 @@
-/* -----------------------
-   External CSS (style.css)
------------------------ */
 
-/* ——————————————————————————
-   1) CSS VARIABLES & FALLBACK
-———————————————————————————————— */
 :root {
-  --accent: hsl(150 60% 60%);              /* HSL */
-  --accent-fallback: #8fb;                /* fallback hex */
-  --bg-light: rgba(240, 240, 250, 1);     /* RGBA */
-  --font-main: "Fira Sans", sans-serif;   /* CSS variable */
+  --accent: hsl(150 60% 60%);              /* hsl */
+  --accent-fallback: #00FF00;              /* hex */  
+  --bg-light: rgba(240, 0, 250, 1);     /* rgba */ 
+  --font-main: "Papyrus", sans-serif;   /* universal font */
 }
 
-/* ——————————————————————————
-   2) GLOBAL RESET & BASE
-———————————————————————————————— */
-/* universal selector */
-*,
-*::before,
-*::after {
-  margin: 0;                              /* longhand */
-  padding: 0;                             /* longhand */
+
+*,*::before,*::after {
+  margin: 0;                              
+  padding: 0;                             
   box-sizing: border-box;
   font-family: var(--font-main);
 }
 
-/* element selector */
+
 body {
   background-color: var(--bg-light);
-  color: #333;                            /* color name */
-  line-height: 1.5;                       /* unit: unitless */
+  color: #333;                            
+  line-height: 1.5;                       
 }
 
-/* ——————————————————————————
-   3) CONTAINER ⇢ margin, padding, border
-———————————————————————————————— */
+
 .container {
-  width: 90vw;                            /* relative: vw */
-  max-width: 50rem;                       /* relative: rem */
+  width: 90vw;                            /* vw */
+  max-width: 50rem;                       /*  rem */
   margin: 2rem auto;                      /* shorthand */
   padding: 1.5rem;                        /* shorthand */
-  border: 0.1cm solid hsl(0 0% 80%);      /* absolute: cm */
+  border: 0.1cm solid hsl(0 0% 80%);      /*  cm */
 }
 
-/* ——————————————————————————
-   4) HEADER ⇢ color, background, text-align, position
-———————————————————————————————— */
+
 .site-header {
-  background: green;
+  background: var(--accent);
   color: white;
   text-align: center;                     /* text-align */
   position: sticky;                       /* position */
@@ -56,9 +41,7 @@ body {
   border-bottom: 5px solid rgba(0, 0, 0, 0.5);
 }
 
-/* ——————————————————————————
-   5) ROW ↔ display:flex & spacing
-———————————————————————————————— */
+
 .row {
   display: flex;                          /* flexbox */
   flex-wrap: wrap;                       /* flex attribute */
@@ -66,23 +49,20 @@ body {
   margin-bottom: 4rem;                    /* longhand */
 }
 
-/* force row 3 (form) to stack vertically */
+
 .first-row {
   display: flex;            /* ensure it’s a flex container */
-  flex-direction: row;      /* SIDE‑BY‑SIDE */
-  gap: 2rem;                /* space between sections */
-  margin-bottom: 3rem;      /* extra room below this row */
+  flex-direction: row;      
+  gap: 4rem;                /* space between sections */
+  margin-bottom: 3rem;      /* extra room */
 }
 
 .first-row > section {
-  flex: 1;                  /* each panel grows equally */
-  min-width: 12em;          /* prevents them from collapsing too small */
+  flex: 1;                  
+  min-width: 12em;          
 }
 
-/* ——————————————————————————
-   6) AGENDA LIST & ATTENDANCE
-———————————————————————————————— */
-/* class selector */
+
 .attendee-list {
   list-style: none;
   border: 2px dashed var(--accent);
