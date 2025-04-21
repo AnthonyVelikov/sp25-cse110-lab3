@@ -3,15 +3,21 @@
   <head>
     <title>Meeting Minutes</title>
     <link rel="icon" href="path/to/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="style.css">
+  <style>
+    hr { border-top: 4px dotted steelblue; }
+  </style>
+    
   </head>
-  <body>
-     <header>
+  <body style="background-color: hsl(210 50% 96%);">
+     <header id="top">
     <h1>Team Meeting: check in</h1>
-    <p>Date: April 12, 2025</p>
+    <p>Date: April 21, 2025</p>
   </header>
     
   <main>
-    <section>
+    <section id="attendance">
       <h2>Attendance</h2>
       <ul>
         <li><strong>Messi</strong></li>
@@ -22,11 +28,12 @@
 
     <section>
       <h2>Agenda</h2>
-      <ol>
-        <li>Unfinished business from last meeting</li>
-        <li>New brainstorming items</li>
-        <li>Q&A session</li>
+      <<ol class="agenda-list">   <!-- flex parent -->
+        <li>from last meeting:</li>
+        <li>brainstorming items:</li>
+        <li>Q&amp;A session</li>
       </ol>
+    </section>
     </section>
     <section>
   <h2>notes</h2>
