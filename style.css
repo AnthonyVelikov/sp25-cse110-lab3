@@ -47,13 +47,13 @@ body {
    4) HEADER ⇢ color, background, text-align, position
 ———————————————————————————————— */
 .site-header {
-  background: var(--accent, var(--accent-fallback)) no-repeat center;
+  background: green;
   color: white;
   text-align: center;                     /* text-align */
   position: sticky;                       /* position */
   top: 0;                                 /* position */
   padding: 2rem;                          /* shorthand */
-  border-bottom: 5px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 5px solid rgba(0, 0, 0, 0.5);
 }
 
 /* ——————————————————————————
