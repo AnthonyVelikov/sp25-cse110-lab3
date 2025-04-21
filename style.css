@@ -67,15 +67,16 @@ body {
 }
 
 /* force row 3 (form) to stack vertically */
-.form-row {
-  flex-direction: column;                /* flex attribute */
-  align-items: center;                   /* flex attribute */
+.first-row {
+  display: flex;            /* ensure it’s a flex container */
+  flex-direction: row;      /* SIDE‑BY‑SIDE */
+  gap: 2rem;                /* space between sections */
+  margin-bottom: 3rem;      /* extra room below this row */
 }
 
-/* each direct child takes full width in its flex row */
-.row > * {
-  flex: 1;                                /* flex shorthand */
-  min-width: 12em;                        /* relative unit: em */
+.first-row > section {
+  flex: 1;                  /* each panel grows equally */
+  min-width: 12em;          /* prevents them from collapsing too small */
 }
 
 /* ——————————————————————————
