@@ -2,7 +2,7 @@
 :root {
   --accent: hsl(150 60% 60%);              /* hsl */
   --accent-fallback: #00FF00;              /* hex */  
-  --bg-light: rgba(240, 0, 250, 1);     /* rgba */ 
+  --bg-light: rgba(0, 250, 0, .5);     /* rgba */ 
   --font-main: "Roboto", sans-serif;   /* universal font */
 }
 
@@ -128,6 +128,17 @@ h1, h2, h3 {
   color: green;                           /* text-color */
   text-decoration: underline;             /* text-decoration */
   text-align: center;                     /* text-align */
+}
+
+#previous-notes details summary {
+  padding: 0.5rem;
+  transition: background‑color 0.2s;
+}
+
+#previous-notes details summary:hover {
+  background‑color: var(--accent, hsl(150,60%,60%));  /* use your accent color */
+  color: white;
+  cursor: pointer;
 }
 
 /* display values */
