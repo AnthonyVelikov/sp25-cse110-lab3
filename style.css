@@ -66,19 +66,38 @@ main:has(form:hover) section {
 }
 
 
-video { 
-  width: 100%; 
-  max-width: 320px; 
-  height: 240px; 
-}
-audio { 
-  width: 100%; 
-  min-width: 200px; 
-}
-.whiteboard {
-  width: 300px;
-  height: auto;
+.row {
+  display: flex;
+  gap: 2rem;              /* space between sections */
+  margin-bottom: 2rem;    /* vertical spacing between rows */
 }
 
-details { display: block; }
-summary { cursor: pointer; }
+/* Let each section share the width equally */
+.row > section {
+  flex: 1;                /* each child takes equal space */
+}
+
+/* Optional: constrain images/media inside their column */
+.whiteboard {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Make your audio/video fill their column’s width */
+#media audio,
+#media video {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Responsive: stack rows vertically on narrow screens */
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+}
