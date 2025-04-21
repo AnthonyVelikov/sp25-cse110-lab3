@@ -1,58 +1,59 @@
-/* -----------------------
+/* ─────────────────────────
    Base / Reset
------------------------ */
-:root { --accent: hsl(120, 60%, 70%); /* use HSL so it’s widely supported */ }
-* {
+───────────────────────── */
+:root {
+  /* light mint accent, with HSL fallback */
+  --accent: hsl(120 60% 70%);
+}
+*,
+*::before,
+*::after {
   margin: 0;
   box-sizing: border-box;
   font-family: "Fira Sans", sans-serif;
 }
 
-/* -----------------------
+/* ─────────────────────────
    Header
------------------------ */
+───────────────────────── */
 header {
-  background-color: var(--accent, green);
-  color: #ffffff;
+  background-color: var(--accent, #9be7a0);
+  color: #fff;
   padding: 1.5rem;
   text-align: center;
   position: sticky;
   top: 0;
-  border-bottom: 4px solid rgba(0,0,0,0.15);
+  border-bottom: 4px solid rgb(0 0 0 / 15%);
 }
 
-/* -----------------------
-   .row Flex Containers
------------------------ */
+/* ─────────────────────────
+   Generic “row” wrapper
+   — now stacks vertically
+───────────────────────── */
 .row {
   display: flex;
+  flex-direction: column;   /* ← fixes the “everything in 1 row” issue */
   gap: 2rem;
-  margin-bottom: 2rem;
+  margin-block: 2rem;
 }
 
-/* Row 1: attendance, agenda, previous notes */
-.first-row > section {
-  flex: 1;
+/* keep children full‑width */
+.row > * {
+  width: 100%;
 }
 
-/* Row 2: whiteboard, audio, video */
-.second-row > section {
-  flex: 1;
-}
-
-/* Row 3: form full‑width */
+/* ─ Row 3 tweaks — center the form ─ */
 .form-row {
-  flex-direction: column;
-  align-items: center;
+  align-items: center;      /* center horizontally */
 }
 .form-row form {
   width: 100%;
   max-width: 600px;
 }
 
-/* -----------------------
+/* ─────────────────────────
    Attendance & Agenda
------------------------ */
+───────────────────────── */
 .attendee-list {
   list-style: none;
   padding: 0;
@@ -61,73 +62,78 @@ header {
   padding: 0.25rem 0.5rem;
   border-bottom: 1px solid #999;
 }
-.attendee-list .attendee:last-child {
-  border-bottom: none;
-}
+.attendee-list .attendee:last-child { border-bottom: none; }
 
 .agenda-list {
   list-style: decimal inside;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin: 1rem 0;
+  margin-block: 1rem;
 }
-.agenda-list > li {
-  background: color-mix(in srgb, white 50%, purple);
+.agenda-list li {
+  background: rgb(168 139 204 / 15%);   /* avoids experimental color‑mix */
   padding: 0.5em 1em;
   border-radius: 8px;
+  transition: transform 0.1s;
 }
-.agenda-list li:hover {
-  outline: 2px dashed #222;
-}
-.agenda-list li:active {
-  transform: scale(0.97);
-}
+.agenda-list li:hover   { outline: 2px dashed #222; }
+.agenda-list li:active  { transform: scale(0.97); }
 
-/* -----------------------
-   Notes (in first row)
------------------------ */
+/* ─────────────────────────
+   Previous notes
+───────────────────────── */
 #previous-notes details {
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-/* -----------------------
-   Whiteboard, Audio, Video
------------------------ */
-.whiteboard {
+/* ─────────────────────────
+   Media (whiteboard / AV)
+───────────────────────── */
+.whiteboard,
+#audio audio,
+#video video {
   width: 100%;
   max-width: 400px;
   height: auto;
   display: block;
   margin-bottom: 1rem;
 }
-#audio audio,
-#video video {
-  width: 100%;
-  max-width: 400px;
-  display: block;
-  margin-bottom: 1rem;
-}
 
-/* -----------------------
-   Pull‑down & Form
------------------------ */
-select, input, textarea, button {
+/* ─────────────────────────
+   Form elements
+───────────────────────── */
+select,
+input,
+textarea,
+button {
   font-family: inherit;
 }
-select {
+select,
+input[type="text"],
+input[type="date"],
+textarea {
   padding: 0.5rem;
   border: 1px solid #666;
   border-radius: 4px;
+  width: 100%;
 }
+button {
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: 4px;
+  background: var(--accent, #9be7a0);
+  color: #000;
+  cursor: pointer;
+}
+button:hover { filter: brightness(0.95); }
 
-/* -----------------------
-   Responsive
------------------------ */
+/* ─────────────────────────
+   Small‑screen overrides
+───────────────────────── */
 @media (max-width: 600px) {
-  .row {
-    flex-direction: column;
-  }
+  /* already stacked; only tweak gaps if desired */
+  .row { gap: 1.5rem; }
 }
