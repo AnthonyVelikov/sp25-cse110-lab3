@@ -4,7 +4,7 @@
 header {
   background-color: var(--accent, green);  
   color:#008000;
-  padding: 1rem;                                 
+  padding: 1.5rem;                                 
   text-align: center;
   border-bottom: 10px solid rgba(0,0,0,1);        
 }
@@ -18,7 +18,11 @@ header {
   margin: 1rem auto;
   max-width: 30ch;             
 }
-
+.agenda-list > li {
+  background: color-mix(in srgb, white 50%, purple); /* color‑mix */
+  padding: 0.5em 1em;                         /* padding shorthand, em unit */
+  border-radius: 8px;
+}
 .agenda-list li:hover   { outline: 2px dashed #222; }
 .agenda-list li:active  { transform: scale(.97); }  
 
@@ -29,11 +33,13 @@ main {
   padding: 2rem;
 }
 
+h2 ~ p { color: hsl(0 0% 40%); }
+
 .attendee-list {
   list-style: none;
   display: inline-block;         /* inline‑block counts for display req */
-  margin: 1cm auto;              /* absolute unit cm + auto margins */
-  padding: 0;                    /* longhand via shorthand zero */
+  margin: .5cm auto;              /* absolute unit cm + auto margins */
+  padding: 1;                    /* longhand via shorthand zero */
   border: 2pt solid #333;        /* absolute unit pt */
 }
 .attendee-list .attendee {       /* element.class combiner */
@@ -41,6 +47,14 @@ main {
   padding-left: 8px; padding-right: 8px;  /* longhand padding */
   border-bottom: 1px solid #999;          /* border‑style/color/width */
 }
+.attendee-list .attendee:last-child { border-bottom: none; }
+
+form [type="text"] {
+  border: 1px solid #999;
+  padding: .5rem;
+}
+
+label + input { margin-left: .4rem; }
 
 header { position: sticky; top: 0; }
 footer { position: relative; margin-top: 2rem; text-align: center; }
