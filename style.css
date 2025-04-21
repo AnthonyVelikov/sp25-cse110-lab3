@@ -130,16 +130,6 @@ h1, h2, h3 {
   text-align: center;                     /* text-align */
 }
 
-#previous-notes details summary {
-  padding: 0.5rem;
-  transition: background‑color 0.2s;
-}
-
-#previous-notes details summary:hover {
-  background‑color: var(--accent, hsl(150,60%,60%));  /* use your accent color */
-  color: white;
-  cursor: pointer;
-}
 
 /* display values */
 .hidden { display: none; }                /* none */
