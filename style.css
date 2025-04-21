@@ -1,10 +1,8 @@
-:root {
-  --accent: oklch(62% 0.2 250);          /* wide‑gamut color + fallback below */
-}
+
 * { margin: 0; box-sizing: border-box; font-family: "Fira Sans", sans-serif; }
 
 header {
-  background-color: var(--accent, #4c6ef5);
+  background-color: var(--accent, #008000);
   color: #fff;                                     /* hex fallback */
   padding: 1.5rem;                                 /* relative unit rem */
   text-align: center;
@@ -12,13 +10,13 @@ header {
 }
 
 .agenda-list {
-  display: flex;               /* flex parent */
+  display: flex;               
   flex-direction: column;
   gap: 0.5rem;
-  justify-content: flex-start; /* flex property #3 */
+  justify-content: flex-start; 
   list-style: decimal inside;
   margin: 1rem auto;
-  max-width: 40ch;             /* max‑width */
+  max-width: 30ch;             
 }
 
 .agenda-list li:hover   { outline: 2px dashed #222; }
