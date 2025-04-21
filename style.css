@@ -1,82 +1,101 @@
+/* -----------------------
+   Base / Reset
+----------------------- */
+:root { --accent: hsl(120, 60%, 70%); /* use HSL so it’s widely supported */ }
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Fira Sans", sans-serif;
+}
 
-
-
+/* -----------------------
+   Header
+----------------------- */
 header {
-  background-color: green;
-  color: #ffffff;   
+  background-color: var(--accent, green);
+  color: #ffffff;
+  padding: 1.5rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  border-bottom: 4px solid rgba(0,0,0,0.15);
+}
+
+/* -----------------------
+   .row Flex Containers
+----------------------- */
+.row {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Row 1: attendance, agenda, previous notes */
+.first-row > section {
+  flex: 1;
+}
+
+/* Row 2: whiteboard, audio, video */
+.second-row > section {
+  flex: 1;
+}
+
+/* Row 3: form full‑width */
+.form-row {
+  flex-direction: column;
+  align-items: center;
+}
+.form-row form {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* -----------------------
+   Attendance & Agenda
+----------------------- */
+.attendee-list {
+  list-style: none;
+  padding: 0;
+}
+.attendee-list .attendee {
+  padding: 0.25rem 0.5rem;
+  border-bottom: 1px solid #999;
+}
+.attendee-list .attendee:last-child {
+  border-bottom: none;
 }
 
 .agenda-list {
-  display: flex;               
+  list-style: decimal inside;
+  display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  justify-content: flex-start; 
-  list-style: decimal inside;
-  margin: 1rem auto;
-  max-width: 30ch;             
+  margin: 1rem 0;
 }
 .agenda-list > li {
-  background: color-mix(in srgb, white 50%, purple); /* color‑mix */
-  padding: 0.5em 1em;                         /* padding shorthand, em unit */
+  background: color-mix(in srgb, white 50%, purple);
+  padding: 0.5em 1em;
   border-radius: 8px;
 }
-.agenda-list li:hover   { outline: 2px dashed #222; }
-.agenda-list li:active  { transform: scale(.97); }  
-
-main {
-  display: grid;                                /* grid parent */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
+.agenda-list li:hover {
+  outline: 2px dashed #222;
+}
+.agenda-list li:active {
+  transform: scale(0.97);
 }
 
-h2 ~ p { color: hsl(0 0% 40%); }
-
-.attendee-list {
-  list-style: none;
-  display: inline-block;         /* inline‑block counts for display req */
-  margin: .5cm auto;              /* absolute unit cm + auto margins */
-  padding: 1;                    /* longhand via shorthand zero */
-  border: 2pt solid #333;        /* absolute unit pt */
-}
-.attendee-list .attendee {       /* element.class combiner */
-  padding-top: 4px; padding-bottom: 4px;
-  padding-left: 8px; padding-right: 8px;  /* longhand padding */
-  border-bottom: 1px solid #999;          /* border‑style/color/width */
-}
-.attendee-list .attendee:last-child { border-bottom: none; }
-
-form [type="text"] {
-  border: 1px solid #999;
-  padding: .5rem;
+/* -----------------------
+   Notes (in first row)
+----------------------- */
+#previous-notes details {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-label + input { margin-left: .4rem; }
-
-header { position: sticky; top: 0; }
-footer { position: relative; margin-top: 2rem; text-align: center; }
-
-@media (max-width: 30rem) {    /* phone size */
-  body { font-size: 90%; }     /* % relative unit */
-  main { grid-template-columns: 1fr; }
-}
-
-main:has(form:hover) section {
-  filter: blur(1px);
-}
-
-
-.row {
-  display: flex;
-  gap: 2rem;              /* space between sections */
-  margin-bottom: 2rem;    /* vertical spacing between rows */
-}
-
-/* Let each section share the width equally */
-.row > section {
-  flex: 1;                /* each child takes equal space */
-}
-/* Optional: constrain images/media inside their column */
+/* -----------------------
+   Whiteboard, Audio, Video
+----------------------- */
 .whiteboard {
   width: 100%;
   max-width: 400px;
@@ -84,17 +103,29 @@ main:has(form:hover) section {
   display: block;
   margin-bottom: 1rem;
 }
-
-/* Make your audio/video fill their column’s width */
-#media audio,
-#media video {
+#audio audio,
+#video video {
   width: 100%;
   max-width: 400px;
   display: block;
   margin-bottom: 1rem;
 }
 
-/* Responsive: stack rows vertically on narrow screens */
+/* -----------------------
+   Pull‑down & Form
+----------------------- */
+select, input, textarea, button {
+  font-family: inherit;
+}
+select {
+  padding: 0.5rem;
+  border: 1px solid #666;
+  border-radius: 4px;
+}
+
+/* -----------------------
+   Responsive
+----------------------- */
 @media (max-width: 600px) {
   .row {
     flex-direction: column;
