@@ -68,10 +68,6 @@ main:has(form:hover) section {
   filter: blur(1px);
 }
 
-fieldset {
-  padding: 1rem;
-  & legend { font-weight: 700; }          /* nested selector */
-}
 
 video { 
   width: 100%; 
