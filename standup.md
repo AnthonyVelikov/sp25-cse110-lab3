@@ -1,4 +1,4 @@
-# 🗓️ Daily Stand‑Up Meeting
+#  Daily Stand‑Up Meeting
 
 ## Date & Time
 > **Insert:** YYYY‑MM‑DD, HH:MM AM/PM
