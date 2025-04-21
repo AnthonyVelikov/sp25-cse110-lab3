@@ -44,3 +44,25 @@ main {
   border-bottom: 1px solid #999;          /* border‑style/color/width */
 }
 
+header { position: sticky; top: 0; }
+footer { position: relative; margin-top: 2rem; text-align: center; }
+
+@media (max-width: 30rem) {    /* phone size */
+  body { font-size: 90%; }     /* % relative unit */
+  main { grid-template-columns: 1fr; }
+}
+
+main:has(form:hover) section {
+  filter: blur(1px);
+}
+
+fieldset {
+  padding: 1rem;
+  & legend { font-weight: 700; }          /* nested selector */
+}
+
+video { width: 100%; max-width: 320px; height: 240px; }
+audio { width: 100%; min-width: 200px; }
+
+details { display: block; }
+summary { cursor: pointer; }
