@@ -1,3 +1,8 @@
+:root {
+  --accent: oklch(62% 0.2 250);          /* wide‑gamut color + fallback below */
+}
+* { margin: 0; box-sizing: border-box; font-family: "Fira Sans", sans-serif; }
+
 header {
   background-color: var(--accent, #4c6ef5);
   color: #fff;                                     /* hex fallback */
