@@ -37,7 +37,7 @@
 
 ## Goals & Priorities
 
-| Participant | 🕰️  **Since Last Stand‑Up** | 🚀  **Until Next Stand‑Up** |
+| Participant |   **Since Last ** |   ** Next Stand‑Up** |
 |-------------|-----------------------------|-----------------------------|
 | **Anthony** | • Finished setting up Lab 3 repo<br>• Closed Issues #1‑2 | • Style `meeting‑minutes` page<br>• Validate CSS & add screenshot |
 | **_Teammate _** |  |  |
