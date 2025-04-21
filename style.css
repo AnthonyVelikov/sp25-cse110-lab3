@@ -1,1 +1,41 @@
+header {
+  background-color: var(--accent, #4c6ef5);
+  color: #fff;                                     /* hex fallback */
+  padding: 1.5rem;                                 /* relative unit rem */
+  text-align: center;
+  border-bottom: 4px solid rgba(0,0,0,.15);        /* rgba */
+}
+
+.agenda-list {
+  display: flex;               /* flex parent */
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: flex-start; /* flex property #3 */
+  list-style: decimal inside;
+  margin: 1rem auto;
+  max-width: 40ch;             /* max‑width */
+}
+
+.agenda-list li:hover   { outline: 2px dashed #222; }
+.agenda-list li:active  { transform: scale(.97); }  
+
+main {
+  display: grid;                                /* grid parent */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.attendee-list {
+  list-style: none;
+  display: inline-block;         /* inline‑block counts for display req */
+  margin: 1cm auto;              /* absolute unit cm + auto margins */
+  padding: 0;                    /* longhand via shorthand zero */
+  border: 2pt solid #333;        /* absolute unit pt */
+}
+.attendee-list .attendee {       /* element.class combiner */
+  padding-top: 4px; padding-bottom: 4px;
+  padding-left: 8px; padding-right: 8px;  /* longhand padding */
+  border-bottom: 1px solid #999;          /* border‑style/color/width */
+}
 
