@@ -4,7 +4,7 @@
 header {
   background-color: var(--accent, #008000);
   color: #fff;                                     /* hex fallback */
-  padding: 1.5rem;                                 /* relative unit rem */
+  padding: 1rem;                                 /* relative unit rem */
   text-align: center;
   border-bottom: 4px solid rgba(0,0,0,.15);        /* rgba */
 }
