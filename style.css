@@ -73,8 +73,19 @@ fieldset {
   & legend { font-weight: 700; }          /* nested selector */
 }
 
-video { width: 100%; max-width: 320px; height: 240px; }
-audio { width: 100%; min-width: 200px; }
+video { 
+  width: 100%; 
+  max-width: 320px; 
+  height: 240px; 
+}
+audio { 
+  width: 100%; 
+  min-width: 200px; 
+}
+.whiteboard {
+  width: 600px;
+  height: auto;
+}
 
 details { display: block; }
 summary { cursor: pointer; }
