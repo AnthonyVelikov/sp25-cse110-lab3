@@ -1,120 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8" />
     <title>Meeting Minutes</title>
     <link rel="icon" href="path/to/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
-     <link rel="stylesheet" href="style.css">
-  <style>
-    hr { border-top: 4px dotted steelblue; }
-  </style>
-    
+    <link rel="stylesheet" href="style.css">
+    <style>
+      hr { border-top: 4px dotted steelblue; }
+    </style>
   </head>
+
   <body style="background-color: hsl(210 50% 96%);">
-     <header id="top">
-    <h1>Team Meeting: check in</h1>
-    <p>Date: April 21, 2025</p>
-  </header>
-    
-  <main>
+    <header id="top">
+      <h1>Team Meeting: Check In</h1>
+      <p>Date: April 21, 2025</p>
+    </header>
 
-  
-  <div class="row">
-    <section id="attendance">
-      <h2>Attendance</h2>
-      <ul class="attendee-list">
-        <li class="attendee"><strong>Messi</strong></li>
-        <li class="attendee"><em>Ronaldo</em></li>
-        <li class="attendee">Lebron James</li>
-      </ul>
-    </section>
+    <main>
+      <!-- Row 1: Attendance + Agenda + Previous Notes -->
+      <div class="row first-row">
+        <section id="attendance">
+          <h2>Attendance</h2>
+          <ul class="attendee-list">
+            <li class="attendee"><strong>Messi</strong></li>
+            <li class="attendee"><em>Ronaldo</em></li>
+            <li class="attendee">Lebron James</li>
+          </ul>
+        </section>
 
-    <section id="agenda">
-      <h2>Agenda</h2>
-      <ol class="agenda-list">
-        <li>Recap from last meeting</li>
-        <li>Brainstorming items</li>
-        <li>Q&amp;A session</li>
-      </ol>
-    </section>
-    <details>
-  <summary>Click to see old meeting notes</summary>
-  <p>notes from the previous meeting go here[...]</p>
-</details>
-  </div>
+        <section id="agenda">
+          <h2>Agenda</h2>
+          <ol class="agenda-list">
+            <li>Recap from last meeting</li>
+            <li>Brainstorming items</li>
+            <li>Q&amp;A session</li>
+          </ol>
+        </section>
 
-  
-  <div class="row">
-    <section id="notes">
-      <h2>Notes</h2>
-      <p>In our meeting where we <strong>strongly</strong> recommended adopting new practices.</p>
-      <p>We had <b>5</b> absences.</p>
-      <p>Very <em>important</em> idea, <i>Teamwork</i>.</p>
-      <p>Check out <a href="https://example.com">Project Wiki</a>.</p>
-      <hr>
-      <div><span>span inside a div.</span></div>
-    </section>
+        <section id="previous-notes">
+          <h2>Previous Meeting Notes</h2>
+          <details>
+            <summary>Click to see old meeting notes</summary>
+            <p>Notes from the previous meeting go here […]</p>
+          </details>
+        </section>
+      </div>
 
-    <section id="media">
-      <h2>Meeting Whiteboard & Media</h2>
-      <img src="audio and video/whitebaord.png" alt="Whiteboard" class="whiteboard">
-      <audio controls>
-        <source src="audio and video/Recording.mp3" type="audio/mpeg">
-      </audio>
-      <video controls>
-        <source src="audio and video/meeting.mp4" type="video/mp4">
-      </video>
-    </section>
-  </div>
-    
+      <!-- Row 2: Whiteboard + Audio + Video -->
+      <div class="row second-row">
+        <section id="whiteboard">
+          <h2>Meeting Whiteboard</h2>
+          <img
+            src="audio and video/whitebaord.png"
+            alt="Whiteboard diagram"
+            class="whiteboard"
+          >
+        </section>
 
-<form action="#" method="GET">
-  <fieldset>
-    <legend>Post meeting form</legend>
+        <section id="audio">
+          <h2>Audio Recording</h2>
+          <audio controls>
+            <source src="audio and video/Recording.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </section>
 
-    <label for="username">Name:</label>
-    <input id="username" type="text" name="username" placeholder="Enter your name"><br><br>
+        <section id="video">
+          <h2>Video Recording</h2>
+          <video controls>
+            <source src="audio and video/meeting.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </section>
+      </div>
 
-    <label for="meeting-date">Meeting Date:</label>
-    <input id="meeting-date" type="date" name="meeting-date"><br><br>
+      <!-- Row 3: Post‑Meeting Form -->
+      <div class="row form-row">
+        <form action="#" method="GET">
+          <fieldset>
+            <legend>Post Meeting Form</legend>
 
-    <label for="favorite-game">Favorite game:</label>
-    <input id="favorite-game" type="text" list="topics">
-    <datalist id="topics">
-      <option value="scribble"></option>
-      <option value="among us"></option>
-      <option value="gartic phone"></option>
-    </datalist>
-    <br><br>
+            <label for="username">Name:</label>
+            <input id="username" type="text" name="username" placeholder="Enter your name"><br><br>
 
-    <label for="subscribe">Subscribe</label>
-    <input id="subscribe" type="checkbox" name="subscribe"><br><br>
+            <label for="meeting-date">Meeting Date:</label>
+            <input id="meeting-date" type="date" name="meeting-date"><br><br>
 
-    <p>roles:</p>
-    <input id="role-dev" type="radio" name="role" value="dev">
-    <label for="role-dev">Dev</label><br>
-    <input id="role-designer" type="radio" name="role" value="designer">
-    <label for="role-designer">Design</label><br><br>
+            <label for="favorite-game">Favorite game:</label>
+            <input id="favorite-game" type="text" list="topics">
+            <datalist id="topics">
+              <option value="scribble">
+              <option value="among us">
+              <option value="gartic phone">
+            </datalist><br><br>
 
-    <label for="comments">extra comments:</label><br>
-    <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+            <label for="subscribe">Subscribe</label>
+            <input id="subscribe" type="checkbox" name="subscribe"><br><br>
 
-    <select name="improvement">
-      <option value="1">More coffee</option>
-      <option value="2">Shorter</option>
-      <option value="3">funner</option>
-    </select><br><br>
+            <p>Roles:</p>
+            <input id="role-dev" type="radio" name="role" value="dev">
+            <label for="role-dev">Dev</label><br>
+            <input id="role-designer" type="radio" name="role" value="designer">
+            <label for="role-designer">Design</label><br><br>
 
-    <button type="submit">submit</button>
-  </fieldset>
-</form>
-    
-  </main>
-    
-     <footer>
-    <p>© 2025 Go Gitters</p>
-  </footer>
+            <label for="comments">Extra comments:</label><br>
+            <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+
+            <label for="improvement">Improvement:</label>
+            <select id="improvement" name="improvement">
+              <option value="1">More coffee</option>
+              <option value="2">Shorter</option>
+              <option value="3">Funnier</option>
+            </select><br><br>
+
+            <button type="submit">Submit</button>
+          </fieldset>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2025 Go Gitters</p>
+    </footer>
   </body>
-
-  
 </html>
