@@ -2,7 +2,7 @@
 :root {
   --accent: hsl(150 60% 60%);              /* hsl */
   --accent-fallback: #00FF00;              /* hex */  
-  --bg-light: color-mix(green, white);     /*  color-mix */ 
+  --bg-light: color-mix(in srgb, green 50%, white 50%);    /*  color-mix */ 
   --font-main: "Roboto", serif;   /* universal font */
 }
 
@@ -32,8 +32,8 @@ h2 + ul {                             /* the very next <ul> after an <h2> */
 
 
 body {
-  background-color: var(--accent, var(--accent-fallback));
-  color: #333;                            
+  background-color: var(--accent-fallback);
+  color: green;                            
   line-height: 1.5;                       
 }
 
