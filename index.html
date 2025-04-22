@@ -1,110 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8" />
     <title>Meeting Minutes</title>
     <link rel="icon" href="path/to/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
   </head>
+
   <body>
-     <header>
-    <h1>Team Meeting: check in</h1>
-    <p>Date: April 12, 2025</p>
-  </header>
-    
-  <main>
-    <section>
+    <header id="top">
+      <div class="container">
+        <h1>Team Meeting: Check In</h1>
+        <p>Date: April 21, 2025</p>
+      </div>
+    </header>
+
+    <main class="container">
+  <!-- Row 1: Agenda, Attendance, Previous Notes -->
+  <div class="row first-row">
+    <section id="agenda">
+      <h2>Agenda</h2>
+      <ol class="agenda-list">
+        <li>Recap from last meeting</li>
+        <li>Brainstorming items</li>
+        <li>Q&amp;A session</li>
+      </ol>
+    </section>
+
+    <section id="attendance">
       <h2>Attendance</h2>
-      <ul>
-        <li><strong>Messi</strong></li>
-        <li><em>Ronaldo</em></li>
-        <li>Lebron James</li>
+      <ul class="attendee-list">
+        <li>Messi</li>
+        <li>Ronaldo</li>
+        <li>Lebron James</li>
       </ul>
     </section>
 
-    <section>
-      <h2>Agenda</h2>
-      <ol>
-        <li>Unfinished business from last meeting</li>
-        <li>New brainstorming items</li>
-        <li>Q&A session</li>
-      </ol>
+    <section id="previous-notes">
+      <h2>Previous Meeting Notes</h2>
+      <details>
+        <summary>Click to view the notes</summary>
+        <p>Notes from the previous meeting go here […]</p>
+      </details>
     </section>
-    <section>
-  <h2>notes</h2>
-  <p>in our meeting where we <strong>strongly</strong> recommended adopting new practices.</p>
-  <p>We had <b>5</b> absences.</p>
-  <p>Very <em>important</em> idea, <i>Teamwork</i> .</p>
-  <p>Check out  <a href="https://example.com">Project Wiki</a> for details.</p>
-  <hr>
-  <div>
-    <span> span inside a div.</span>
   </div>
-</section>
-    <section>
-  <h2>Meeting whitebaord</h2>
-  <img src="audio and video/whitebaord.png" alt="A diagram drawn during the meeting">
-  
-  <audio controls>
-    <source src="audio and video/Recording.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
 
-  <video controls width="320" height="240">
-    <source src="audio and video/meeting.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</section>
-    <details>
-  <summary>Click to see old meeting notes</summary>
-  <p>notes from the previous meeting go here[...]</p>
-</details>
-
-<form action="#" method="GET">
-  <fieldset>
-    <legend>Post meeting form</legend>
-
-    <label for="username">Name:</label>
-    <input id="username" type="text" name="username" placeholder="Enter your name"><br><br>
-
-    <label for="meeting-date">Meeting Date:</label>
-    <input id="meeting-date" type="date" name="meeting-date"><br><br>
-
-    <label for="favorite-game">Favorite game:</label>
-    <input id="favorite-game" type="text" list="topics">
-    <datalist id="topics">
-      <option value="scribble"></option>
-      <option value="among us"></option>
-      <option value="gartic phone"></option>
-    </datalist>
-    <br><br>
-
-    <label for="subscribe">Subscribe</label>
-    <input id="subscribe" type="checkbox" name="subscribe"><br><br>
-
-    <p>roles:</p>
-    <input id="role-dev" type="radio" name="role" value="dev">
-    <label for="role-dev">Dev</label><br>
-    <input id="role-designer" type="radio" name="role" value="designer">
-    <label for="role-designer">Design</label><br><br>
-
-    <label for="comments">extra comments:</label><br>
-    <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
-
-    <select name="improvement">
-      <option value="1">More coffee</option>
-      <option value="2">Shorter</option>
-      <option value="3">funner</option>
-    </select><br><br>
-
-    <button type="submit">submit</button>
-  </fieldset>
-</form>
     
-  </main>
-    
-     <footer>
-    <p>© 2025 Go Gitters</p>
-  </footer>
+      <div class="row second-row">
+        <section id="media">
+          <h2>Meeting Media</h2>
+
+          <h3>Audio Recording</h3>
+          <audio controls>
+            <source src="audio and video/Recording.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+
+          <h3>Video Recording</h3>
+          <video controls width="640">
+            <source src="audio and video/meeting.mp4" type="video/mp4">
+            <track kind="captions" src="media/meeting.mp4" srclang="en" label="English captions">
+            Your browser does not support the video tag.
+          </video>
+
+          <h3>Whiteboard Snapshot</h3>
+          <img src="audio and video/whitebaord.png"
+               alt="Snapshot of the meeting whiteboard"
+               width="640">
+        </section>
+      </div>
+
+     
+      <div class="row form-row">
+        <section id="post-meeting-form">
+          <h2>Post‑Meeting Feedback</h2>
+          <form action="#" method="GET">
+            <fieldset>
+              <legend>Tell us what you think</legend>
+
+              <div class="form-group">
+                <label for="username">Name:</label>
+                <input id="username" name="username" type="text" placeholder="Enter your name">
+              </div>
+
+              <div class="form-group">
+                <label for="meeting-date">Meeting Date:</label>
+                <input id="meeting-date" name="meeting-date" type="date" value="2025-04-21">
+              </div>
+
+              <div class="form-group">
+                <label for="favorite-game">Favorite game:</label>
+                <input id="favorite-game" name="favorite-game" type="text" list="topics">
+                <datalist id="topics">
+                  <option value="Scribble">
+                  <option value="Among Us">
+                  <option value="Gartic Phone">
+                </datalist>
+              </div>
+
+              <div class="form-group">
+                <label><input id="subscribe" name="subscribe" type="checkbox"> Subscribe to updates</label>
+              </div>
+
+              <fieldset class="form-group">
+                <legend>Role</legend>
+                <label><input id="role-dev" name="role" type="radio" value="dev"> Dev</label>
+                <label><input id="role-designer" name="role" type="radio" value="designer"> Design</label>
+              </fieldset>
+
+              <div class="form-group">
+                <label for="comments">Extra comments:</label>
+                <textarea id="comments" name="comments" rows="4"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="improvement">How could we improve?</label>
+                <select id="improvement" name="improvement">
+                  <option value="1">More coffee</option>
+                  <option value="2">Shorter meetings</option>
+                  <option value="3">Funnier content</option>
+                </select>
+              </div>
+
+              <button type="submit">Submit</button>
+            </fieldset>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <footer class="container">
+      <p>© 2025 Go Gitters</p>
+    </footer>
   </body>
-
-  
 </html>
