@@ -3,7 +3,7 @@
   --accent: hsl(150 60% 60%);              /* hsl */
   --accent-fallback: #00FF00;              /* hex */  
   --bg-light: color-mix(green, white);     /*  color-mix */ 
-  --font-main: "Roboto", sans-serif;   /* universal font */
+  --font-main: "Roboto", serif;   /* universal font */
 }
 
 
@@ -13,6 +13,22 @@
   box-sizing: border-box;
   font-family: var(--font-main);
 }
+.label-inline {
+  display: inline;                    /* inline display */
+}
+
+input[type="date"] {                  /* attribute selector */
+  font-weight: bold;                  /* just an example style */
+}
+
+h2 ~ p {                              
+  margin-top: 1rem;
+}
+
+h2 + ul {                             /* the very next <ul> after an <h2> */
+  margin-top: 0.5rem;
+}
+
 
 
 body {
@@ -117,13 +133,16 @@ body {
   height: auto;                           /* auto */
   margin: 0.5rem auto;
 }
-
+section.media {                       /* element.class */
+  background: hsl(200 10% 95%);
+}
 
 #post-meeting-form form {
   display: grid;                          /* grid */
   grid-template-columns: repeat( auto-fill, minmax(200px, 1fr) ); /* grid attribute */
   grid-gap: 1rem;                         /* grid attribute */
 }
+
 
 
 h1, h2, h3 {
