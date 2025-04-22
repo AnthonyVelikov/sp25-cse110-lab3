@@ -2,21 +2,21 @@
 :root {
   --accent: hsl(150 60% 60%);              /* hsl */
   --accent-fallback: #00FF00;              /* hex */  
-  --bg-light: rgba(0, 250, 0, .5);     /* rgba */ 
+  --bg-light: color-mix(green, white);     /*  color-mix */ 
   --font-main: "Roboto", sans-serif;   /* universal font */
 }
 
 
 *,*::before,*::after {
   margin: 0;                              
-  padding: 0;                             
+  padding-top: 0;       /* longhand */                      
   box-sizing: border-box;
   font-family: var(--font-main);
 }
 
 
 body {
-  background-color: var(--bg-light);
+  background-color: var(--accent, var(--accent-fallback));
   color: #333;                            
   line-height: 1.5;                       
 }
@@ -27,7 +27,7 @@ body {
   max-width: 50rem;                       /*  rem */
   margin: 2rem auto;                      /* shorthand */
   padding: 1.5rem;                        /* shorthand */
-  border: 0.1cm solid hsl(0 0% 80%);      /*  cm */
+  border: .1cm solid hsl(0 0% 80%);      /*  cm */
 }
 
 
@@ -38,7 +38,8 @@ body {
   position: sticky;                       /* position */
   top: 0;                                 /* position */
   padding: 2rem;                          /* shorthand */
-  border-bottom: 5px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 5px solid rgba(0, 0, 0, 0.5);  /* px */
+  position: absolute;
 }
 
 
@@ -71,7 +72,7 @@ body {
 }
 .attendee-list .attendee {                /* descendant combinator */
   padding: 0.5rem;                        /* shorthand */
-  border-bottom: 1px solid #999;          /* longhand padding */
+  border-bottom: 1mm solid #999;          /* longhand padding + absolute*/
 }
 .attendee-list .attendee:last-child {
   border-bottom: none;
