@@ -32,7 +32,7 @@ h2 + ul {                             /* the very next <ul> after an <h2> */
 
 
 body {
-  background-color: var(--accent, var(--accent-fallback));
+  background-color: var(--accent, var(--accent-fallback));
   color: #333;                            
   line-height: 1.5;                       
 }
@@ -171,18 +171,15 @@ footer {
 }
 
 
-section {
-  @nest & > h2 {
-    color: hsla(200, 50%, 30%, 0.8);
-  }
-}
-
 
 @media (max-width: 768px) {
   .media-container {
-    flex-direction: column;               /* override for narrow screens */
+    flex-direction: column;               /*  for narrow screens */
   }
   #post-meeting-form form {
     grid-template-columns: 1fr;           /* single‑column form */
   }
+}
+section > h2 {
+  color: hsla(200, 50%, 30%, 0.8);
 }
